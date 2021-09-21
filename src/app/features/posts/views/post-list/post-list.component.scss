@@ -1,0 +1,21 @@
+:host {
+  display: block;
+  margin-bottom: 25px;
+}
+
+button {
+  outline: none;
+  border: none;
+  padding: 8px 10px;
+  background-color: #1877f2;
+  color: #fff;
+  width: 100%;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  margin: 15px 0;
+}

@@ -1,0 +1,14 @@
+<div class="card-header">
+  <div class="avatar"><span class="letter">{{ post.user.name[0] }}</span></div>
+  <div class="name">{{ post.user.name }}</div>
+</div>
+
+<div class="card-body">{{ post.body }}</div>
+
+<div class="card-footer" *ngIf="showFooter">
+  <a (click)="toggleState(); comments.loadComments()"><i class="fa fa-comment"></i></a>
+  <a [routerLink]="['/posts', post.id]"><i class="fa fa-eye"></i></a>
+</div>
+<div [@collapse]="collapseState">
+  <app-comments #comments [postId]="post.id" [loadOnInit]="loadCommentsOnInit"></app-comments>
+</div>

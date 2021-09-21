@@ -1,0 +1,40 @@
+:host {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  height: 0;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  background-color: #faa2c1;
+  padding: 10px;
+  margin-bottom: 16px;
+}
+
+footer {
+  background-color: #e0e0e0;
+  padding: 20px;
+  text-align: center;
+}
+
+.avatar {
+  cursor: pointer;
+}
+
+.menu {
+  position: absolute;
+  z-index: 1000;
+  right: 10px;
+  top: 55px;
+  background-color: #fff;
+  border-radius: 1rem;
+  padding: 20px;
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+  transition: opacity 200ms;
+}

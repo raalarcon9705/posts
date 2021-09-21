@@ -1,0 +1,5 @@
+<div class="container">
+  <ng-container *ngIf="post$|async as post">
+    <app-post-item [post]="post" [showFooter]="false" [loadCommentsOnInit]="true" style="padding: 15px;"></app-post-item>
+  </ng-container>
+</div>

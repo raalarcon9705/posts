@@ -1,0 +1,26 @@
+<div class="container">
+
+  <div class="auth-form">
+    <h1>Sign In</h1>
+    <form >
+      <div class="input">
+        <label for="email">Email</label>
+        <input disabled type="email" id="email">
+      </div>
+
+      <div class="input">
+        <label for="password">Password</label>
+        <input disabled type="password" id="passwod">
+      </div>
+
+      <button disabled class="primary-button block-button">Enter</button>
+    </form>
+
+    <div class="social-auth">
+      <h5 class="flex-1" style="width: 100%;">Or join us with</h5>
+      <div class="social-buttons">
+        <button (click)="signInWithGoogle()" class="google-button"  title="Google"><i class="fab fa-google"></i></button>
+      </div>
+    </div>
+  </div>
+</div>

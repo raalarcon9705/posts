@@ -1,0 +1,9 @@
+<div>
+  <div *ngIf="noComments$|async" class="text-center">No comments</div>
+  <div *ngFor="let comment of comments$|async">
+    <app-comment-item [comment]="comment"></app-comment-item>
+  </div>
+  <div *ngIf="hasNext$|async">
+    <button (click)="loadComments()">Load more comments</button>
+  </div>
+</div>

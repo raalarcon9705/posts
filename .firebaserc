@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "posts-df862": {
+      "hosting": {
+        "posts": [
+          "posts-df862"
+        ]
+      }
+    }
+  }
+}
