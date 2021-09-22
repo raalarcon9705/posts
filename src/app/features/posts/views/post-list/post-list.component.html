@@ -1,6 +1,11 @@
 <div class="container">
   <div>
     <h1 class="text-center">Welcome to MyApp</h1>
+
+    <div>
+      <app-filter [orderOptions]="orderOptions" (filter)="setFilter($event)"></app-filter>
+    </div>
+
     <div *ngFor="let post of posts$|async;trackBy:trackById">
       <app-post-item [post]="post"></app-post-item>
     </div>

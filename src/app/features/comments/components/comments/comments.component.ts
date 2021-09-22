@@ -8,6 +8,7 @@ import {
 import { Observable } from 'rxjs';
 import { map, tap, withLatestFrom } from 'rxjs/operators';
 import { IComment } from 'src/app/interfaces/comment';
+import { Filter } from 'src/app/interfaces/filter';
 import { CommentsService } from 'src/app/services/comments.service';
 
 @Component({
@@ -23,6 +24,12 @@ export class CommentsComponent implements OnInit {
   loading$!: Observable<boolean>;
   hasNext$: Observable<boolean>;
   noComments$: Observable<boolean>;
+
+  orderOptions = [
+    { field: 'name', label: 'Name' },
+    { field: 'email', label: 'Email' },
+    { field: 'body', label: 'Content' },
+  ];
 
   showComments = false;
 
@@ -52,5 +59,9 @@ export class CommentsComponent implements OnInit {
     this.showComments = true;
     this.cdr.detectChanges();
     this.commentsService.loadComments(this.postId);
+  }
+
+  setFilter(filter: Filter) {
+    this.commentsService.setFilter(this.postId, filter);
   }
 }

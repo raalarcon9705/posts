@@ -1,9 +1,18 @@
 <div>
   <div *ngIf="noComments$|async" class="text-center">No comments</div>
-  <div *ngFor="let comment of comments$|async">
-    <app-comment-item [comment]="comment"></app-comment-item>
-  </div>
-  <div *ngIf="hasNext$|async">
-    <button (click)="loadComments()">Load more comments</button>
-  </div>
+  <ng-container *ngIf="comments$|async as comments">
+    <div style="padding: 0 5px;">
+      <app-filter [orderOptions]="orderOptions" (filter)="setFilter($event)"></app-filter>
+    </div>
+    <div *ngFor="let comment of comments">
+      <app-comment-item [comment]="comment"></app-comment-item>
+    </div>
+
+    <div *ngIf="(hasNext$|async) && comments?.length">
+      <button (click)="loadComments()">Load more comments</button>
+    </div>
+
+  </ng-container>
+  <div *ngIf="loading$|async" class="text-center">Loading...</div>
+
 </div>

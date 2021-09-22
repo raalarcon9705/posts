@@ -1,0 +1,60 @@
+:host {
+  display: block;
+  background-color: #fff;
+  margin-bottom: 12px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+}
+
+.order-options {
+  display: flex;
+
+  .order-option-item {
+    input[type="radio"] {
+      display: none;
+    }
+
+    margin: 0 10px;
+
+    label.selected {
+      font-weight: bold;
+      color: #1877f2;
+    }
+
+    label {
+      cursor: pointer;
+      user-select: none;
+    }
+  }
+}
+
+.filter {
+  flex: 1;
+
+  input[type="search"] {
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+    padding: 10px 5px;
+  }
+}
+
+@media (max-width: 512px) {
+  .order,
+  .filter {
+    width: 100%;
+
+    strong {
+      text-align: left !important;
+    }
+  }
+
+  .order {
+    margin: 10px -10px 0;
+  }
+
+  form {
+    flex-wrap: wrap;
+  }
+}

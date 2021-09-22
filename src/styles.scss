@@ -7,6 +7,10 @@ body {
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
+body {
+  overflow-y: scroll;
+}
+
 main,
 app-root {
   height: 100%;

@@ -1,6 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { combineLatest } from 'rxjs';
 import { map, take, tap, withLatestFrom } from 'rxjs/operators';
+import { Filter } from 'src/app/interfaces/filter';
 import { IPost } from 'src/app/interfaces/post';
 import { PostsService } from 'src/app/services/posts.service';
 
@@ -11,6 +12,10 @@ import { PostsService } from 'src/app/services/posts.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PostListComponent implements OnInit {
+  orderOptions = [
+    { field: 'title', label: 'Title' },
+    { field: 'body', label: 'Content' },
+  ];
   posts$ = this.postsService.posts$;
   loading$ = this.postsService.loading$;
   hasNext$ = combineLatest([this.loading$, this.postsService.pageInfo$]).pipe(
@@ -36,6 +41,10 @@ export class PostListComponent implements OnInit {
         this.postsService.loadPosts();
       }
     });
+  }
+
+  setFilter(filter: Filter) {
+    this.postsService.setFilter(filter);
   }
 
   trackById(idx: number, post: IPost) {

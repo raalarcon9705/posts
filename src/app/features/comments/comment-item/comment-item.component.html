@@ -4,8 +4,10 @@
       <span class="letter">{{ comment.name[0] }}</span>
     </div>
     <div class="flex-1 comment-content">
-      <div class="name">{{ comment.name }}</div>
-      <div>{{ comment.body }}</div>
+      <div class="name">{{ comment.email }}</div>
+      <div class="name" style="margin-bottom: 5px;">{{ comment.name }}</div>
+
+      <div [innerHTML]="comment.body"></div>
     </div>
   </div>
 </div>

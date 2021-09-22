@@ -1,0 +1,20 @@
+<form class="d-flex align-items-center">
+  <div class="filter">
+    <strong style="display: block;">Search</strong>
+    <input type="search" name="search" placeholder="Type your search" autocomplete="off" [(ngModel)]="query" (keyup)="filter.emit({q: query, order: order, sort: sort })">
+  </div>
+  <div class="order">
+    <strong style="margin: 0 10px 5px; display: block; text-align: right;">Order by:</strong>
+    <div class="order-options">
+      <div *ngFor="let option of orderOptions; trackBy:trackByIdx" class="order-option-item">
+        <label for="{{option.field}}" [class.selected]="orderState[option.field] >= 0">
+          {{ option.label }}
+          <input type="radio" [id]="option.field" [checked]="orderState[option.field] >= 0" (click)="toggleOrder(option.field)">
+
+          <i [class]="icons[orderState[option.field]]"></i>
+
+        </label>
+      </div>
+    </div>
+  </div>
+</form>

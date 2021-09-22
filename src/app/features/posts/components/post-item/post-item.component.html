@@ -3,7 +3,10 @@
   <div class="name">{{ post.user.name }}</div>
 </div>
 
-<div class="card-body">{{ post.body }}</div>
+<div class="card-body">
+  <h3 class="margin-0" style="margin-bottom: 12px;">{{ post.title }}</h3>
+  <div [innerHTML]="post.body"></div>
+</div>
 
 <div class="card-footer" *ngIf="showFooter">
   <a (click)="toggleState(); comments.loadComments()"><i class="fa fa-comment"></i></a>

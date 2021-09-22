@@ -7,19 +7,15 @@ import { PostListComponent } from './views/post-list/post-list.component';
 import { PostDetailsComponent } from './views/post-details/post-details.component';
 import { PostItemComponent } from './components/post-item/post-item.component';
 import { CommentsModule } from '../comments/comments.module';
-
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
   declarations: [
     PostsComponent,
     PostListComponent,
     PostDetailsComponent,
-    PostItemComponent
+    PostItemComponent,
   ],
-  imports: [
-    CommonModule,
-    PostsRoutingModule,
-    CommentsModule
-  ]
+  imports: [SharedModule, PostsRoutingModule, CommentsModule],
 })
-export class PostsModule { }
+export class PostsModule {}
