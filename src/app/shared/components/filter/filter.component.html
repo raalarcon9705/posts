@@ -1,6 +1,6 @@
 <form class="d-flex align-items-center">
   <div class="filter">
-    <strong style="display: block;">Search</strong>
+    <strong style="display: block;">{{ title }}</strong>
     <input type="search" name="search" placeholder="Type your search" autocomplete="off" [(ngModel)]="query" (keyup)="filter.emit({q: query, order: order, sort: sort })">
   </div>
   <div class="order">

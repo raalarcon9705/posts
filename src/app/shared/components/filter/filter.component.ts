@@ -20,6 +20,7 @@ export class FilterComponent {
   orderState: { [key: string]: number } = {};
 
   @Input() orderOptions: OrderOption[] = [];
+  @Input() title = 'Search';
 
   @Output() filter = new EventEmitter<Filter>();
 

@@ -2,7 +2,7 @@
   <div *ngIf="noComments$|async" class="text-center">No comments</div>
   <ng-container *ngIf="comments$|async as comments">
     <div style="padding: 0 5px;">
-      <app-filter [orderOptions]="orderOptions" (filter)="setFilter($event)"></app-filter>
+      <app-filter [orderOptions]="orderOptions" title="Search comments" (filter)="setFilter($event)"></app-filter>
     </div>
     <div *ngFor="let comment of comments">
       <app-comment-item [comment]="comment"></app-comment-item>
